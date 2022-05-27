@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/RainMaker/Demo/DemoScene.unity
+- path: Assets/Ruins/Demo1/HCI.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

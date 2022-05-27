@@ -6,11 +6,11 @@ namespace DigitalRuby.RainMaker
     public class DemoScript : MonoBehaviour
     {
         public RainScript RainScript;
-        public UnityEngine.UI.Toggle MouseLookToggle;
-        public UnityEngine.UI.Toggle FlashlightToggle;
+       // public UnityEngine.UI.Toggle MouseLookToggle;
+        //public UnityEngine.UI.Toggle FlashlightToggle;
         public UnityEngine.UI.Slider RainSlider;
-        public Light Flashlight;
-        public GameObject Sun;
+       // public Light Flashlight;
+       // public GameObject Sun;
 
         private enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
         private RotationAxes axes = RotationAxes.MouseXAndY;
@@ -47,7 +47,7 @@ namespace DigitalRuby.RainMaker
             }
         }
 
-        private void UpdateMovement()
+        /*private void UpdateMovement()
         {
             float speed = 5.0f * Time.deltaTime;
 
@@ -71,9 +71,9 @@ namespace DigitalRuby.RainMaker
             {
                 FlashlightToggle.isOn = !FlashlightToggle.isOn;
             }
-        }
+        }*/
 
-        private void UpdateMouseLook()
+        /*private void UpdateMouseLook()
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.M))
             {
@@ -114,38 +114,38 @@ namespace DigitalRuby.RainMaker
                 Quaternion yQuaternion = Quaternion.AngleAxis(-rotationY, Vector3.right);
                 transform.localRotation = originalRotation * yQuaternion;
             }
-        }
+        }*/
 
         public void RainSliderChanged(float val)
         {
             RainScript.RainIntensity = val;
         }
 
-        public void MouseLookChanged(bool val)
+       /* public void MouseLookChanged(bool val)
         {
             MouseLookToggle.isOn = val;
-        }
+        }*/
 
-        public void FlashlightChanged(bool val)
+       /* public void FlashlightChanged(bool val)
         {
             FlashlightToggle.isOn = val;
             Flashlight.enabled = val;
-        }
-
+        }*/
+/*
         public void DawnDuskSliderChanged(float val)
         {
             Sun.transform.rotation = Quaternion.Euler(val, 0.0f, 0.0f);
-        }
+        }*/
 
-        public void FollowCameraChanged(bool val)
+      /*  public void FollowCameraChanged(bool val)
         {
             RainScript.FollowCamera = val;
-        }
+        }*/
 
         // Use this for initialization
         private void Start()
         {
-            originalRotation = transform.localRotation;
+            //originalRotation = transform.localRotation;
             RainScript.RainIntensity = RainSlider.value = 0.5f;
             RainScript.EnableWind = true;
         }
@@ -154,11 +154,11 @@ namespace DigitalRuby.RainMaker
         private void Update()
         {
             UpdateRain();
-            UpdateMovement();
-            UpdateMouseLook();
+           /* UpdateMovement();
+            UpdateMouseLook();*/
         }
 
-        public static float ClampAngle(float angle, float min, float max)
+       /* public static float ClampAngle(float angle, float min, float max)
         {
             if (angle < -360F)
             {
@@ -170,6 +170,6 @@ namespace DigitalRuby.RainMaker
             }
 
             return Mathf.Clamp(angle, min, max);
-        }
+        }*/
     }
 }
